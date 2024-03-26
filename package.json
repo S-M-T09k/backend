@@ -2,7 +2,7 @@
   "name": "learning-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "node/vid-4/server.js",
+  "main": "node/vid-6/app.js",
   "directories": {
     "test": "test"
   },
@@ -20,6 +20,7 @@
   },
   "homepage": "https://github.com/S-M-T09k/backend#readme",
   "dependencies": {
+    "express": "^4.19.2",
     "lodash": "^4.17.21",
     "nodemon": "^3.1.0"
   }
