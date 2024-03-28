@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+const morgan = require('morgan');
 const app = express();
 const port = 3001;
 
@@ -7,6 +8,10 @@ app.listen(port, () => console.log(`app listening on localhost:${port}`));
 // set a view engine
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../vid-7/views'));
+
+app.use(morgan('dev'));
+//!static files such as CSS and JS
+app.use(express.static(path.join(__dirname, '../vid-8')));//put them in this directory
 
 app.get('/', (req, res) => {
 
