@@ -2,7 +2,7 @@
   "name": "learning-backend",
   "version": "1.0.0",
   "description": "",
-  "main": "node/vid-6/app.js",
+  "main": "express/server.js",
   "directories": {
     "test": "test"
   },
