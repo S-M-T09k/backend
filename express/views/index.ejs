@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<script src="/script.js" defer></script>
+<%- include('./partials/head.ejs') %>
+
+  <body>
+    <h1>
+      Hello, <span id="userName">user</span>,
+      listening on port:<%= port %>
+    </h1>
+    <p>use locals.varName <%= locals.text || 'can set a default value' %>
+    </p>
+    <button type="button">Download</button>
+  </body>
+
+</html>
