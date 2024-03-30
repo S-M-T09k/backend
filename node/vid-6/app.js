@@ -22,32 +22,19 @@ const Blog = require('../vid-9/models/blogs.js');
 
 // set a view engine
 app.set('view engine', 'ejs');
-app.set('views', path.join(__dirname, '../vid-7/views'));
+app.set('views', path.join(__dirname, '../vid-9/views'));
 
 app.use(morgan('dev'));
 //!static files such as CSS and JS
-app.use(express.static(path.join(__dirname, '../vid-8')));//put them in this directory
+app.use(express.static(path.join(__dirname, '../vid-9/public')));//put them in this directory
 
 app.get('/', (req, res) => {
 
-  const blogs = [
-    { title: "Yoshi finds eggs", snippet: "Lorem ipsum dolor sit amet consectetur" },
-    { title: "Mario finds stars", snippet: "Lorem ipsum dolor sit amet consectetur" },
-    { title: "How to defeat bowser", snippet: "Lorem ipsum dolor sit amet consectetur" },
-    { title: "Yoshi finds stars", snippet: "Lorem ipsum dolor sit amet consectetur" },
-  ];
+  res.render('index', { title: 'Home' });
 
-  // res.send('<h1>Hello World!</h1>');
-  //// res.sendFile(path.join(__dirname, '../vid-4/pages/index.html'));
-  res.render('index', { title: 'Home', blogs });
-  //?this should work but doesn't for some reason
-  //? res.sendFile('../vid-4/pages/index.html', { root: __dirname });
-  // res.sendFile(path.join(__dirname, '../vid-4/pages/index.js'));
-  // res.sendFile(path.join(__dirname, '../vid-4/pages/style.css'));
 });
 
 app.get('/about', (req, res) => {
-  ////res.sendFile(path.join(__dirname, '../vid-4/pages/about.html'));
   res.render('about', { title: 'About' });
 });
 
@@ -55,9 +42,17 @@ app.get('/home', (req, res) => {
   res.redirect('/');
 });
 
-app.get('/blogs/create', (req, res) => {
-  res.render('create', { title: 'Create' });
+app.get('/contact', (req, res) => {
+  res.render('contact', { title: 'Contact Us' });
 });
+
+app.get('/shop', (req, res) => {
+  res.render('shop', { title: 'Shop' });
+});
+
+app.get('/services', (req, res) => {
+  res.render('services', { title: 'Services' });
+})
 
 //// let blogId = 0;
 app.post('/new', (req, res) => {

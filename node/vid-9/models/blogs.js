@@ -14,7 +14,6 @@ const blogSchema = new mongoose.Schema({
     required: true
   },
   author: String,
-  blogId: Number
 }, { timestamps: true });
 
 const Blog = mongoose.model('blogs', blogSchema);

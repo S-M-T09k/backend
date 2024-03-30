@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%- include("./partials/head.ejs") %>
+   <!-- body -->
+
+   <body class="main-layout inner_page">
+      <!-- loader  -->
+      <div class="loader_bg">
+         <div class="loader"><img src="images/loading.gif" alt="" /></div>
+      </div>
+      <!-- end loader -->
+      <div id="mySidepanel" class="sidepanel">
+         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+         <a href="/">Home</a>
+         <a href="/about">About</a>
+         <a href="/services">services</a>
+         <a href="/shop">Shop</a>
+         <a class="active" href="/contact">Contact</a>
+      </div>
+      <!-- header -->
+      <%- include("./partials/header.ejs") %>
+         <!-- end header -->
+         <!-- contact section -->
+         <div class="contact left_cross_right">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <div class="titlepage text_align_left">
+                        <h2>Request a call back.</h2>
+                        <p>There are many variations of passages of Lorem Ipsum available, but the majority have
+                           suffered
+                           alteration in some form, by injected humour, or raThere are many variations of passages of
+                           Lorem
+                           Ipsum available, but the majority have suffered alteration in some form, by injected humour,
+                           or
+                           raThere are many variations of passages of Lorem </p>
+                     </div>
+                  </div>
+                  <div class="col-md-12">
+                     <form id="request" class="main_form">
+                        <div class="row">
+                           <div class="col-md-12 ">
+                              <input class="contactus" placeholder="You Name" type="type" name="Name">
+                           </div>
+                           <div class="col-md-6">
+                              <input class="contactus" placeholder="Email" type="type" name="Email">
+                           </div>
+                           <div class="col-md-6">
+                              <input class="contactus" placeholder="Phone Number" type="type" name="Phone Number">
+                           </div>
+                           <div class="col-md-12">
+                              <textarea class="textarea" placeholder="Message" type="Message"></textarea>
+                           </div>
+                           <div class="col-md-12">
+                              <button class="send_btn">Send</button>
+                           </div>
+                        </div>
+                     </form>
+                  </div>
+               </div>
+            </div>
+         </div>
+         <!-- end contact section -->
+         <!-- footer -->
+         <%- include('./partials/footer.ejs') %>
+            <!-- end footer -->
+            <!-- Javascript files-->
+            <%- include('./partials/javascripts.ejs') %>
+   </body>
+
+</html>

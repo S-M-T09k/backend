@@ -28,7 +28,7 @@ const server = http.createServer((req, res) => {
       filePath += '/index.html';
       break;
     case '/about':
-      filePath += '/about.html';
+      filePath += '//about';
       break;
     case '/home':
       res.setHeader('Location', '/');
