@@ -1,0 +1,43 @@
+html {
+  /* color-scheme: dark; */
+  scroll-behavior: smooth;
+}
+
+.requestsDisplay {
+  display: grid;
+  justify-content: center;
+  width: 100%;
+}
+
+.request {
+  width: 85dvw;
+  display: grid;
+  justify-self: center;
+  justify-items: center;
+  border: 1px blueviolet solid;
+  padding: 1vw;
+  margin-top: 2vh;
+}
+
+.userInfo {
+  display: grid;
+  width: 100%;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  border-bottom: 2px black solid;
+}
+
+.userInfo * {
+  padding: 0;
+  margin: 0;
+  margin-left: 3px;
+  margin-right: 3px;
+  /* width: max-content; */
+}
+
+.message {
+  width: 100%;
+}
+
+.userEmail h4 {
+  margin-top: 5px;
+}

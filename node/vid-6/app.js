@@ -86,7 +86,7 @@ app.get('/services', (req, res) => {
 
 app.get('/customer-requests', async (req, res) => {
   const requests = await RequestMessage.find();
-  res.render('customer-requests', { title: 'Customer Requests', requests });
+  res.render('requests', { title: 'Customer Requests', requests });
 });
 
 //// let blogId = 0;

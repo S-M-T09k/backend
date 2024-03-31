@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Micro | <%= title %>
+  </title>
+  <link rel="shortcut icon" href="icon/microphone.svg" type="image/x-icon">
+  <link rel="stylesheet" href="css/request.css">
+</head>
+
+<body>
+
+  <a href="/">home</a>
+
+  <div class="requestsDisplay">
+
+    <% if (requests.length > 0) { %>
+      <% requests.forEach(request => { %>
+        
+        <div class="request">
+
+          <div class="userInfo">
+            <div class="userName">
+              <h2>
+                <%= request.name %>
+              </h2>
+            </div>
+            <div class="bar"></div>
+            <div class="userEmail">
+              <h4>
+                <%= request.email %>
+              </h4>
+            </div>
+          </div>
+          <div class="message">
+            <% if (request.messageIncluded) { %>
+              <p>
+                <%= request.message %>
+              </p>
+            <% } else { %>
+              <p>
+                This person said nothing...
+              </p>
+            <% } %>
+          </div>
+
+        </div>
+
+      <% }); %>
+
+    <% } else { %>
+      <h1>
+        There are no requests in the database
+      </h1>
+      <br>
+      <a href="/"><h1>back to Home</h1></a>
+    <% } %>
+    
+  </div>
+
+</body>
+
+</html>
