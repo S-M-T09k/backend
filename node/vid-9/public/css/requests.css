@@ -19,6 +19,11 @@ html {
   margin-top: 2vh;
 }
 
+.request a {
+  padding: 0%;
+  margin: 0%;
+}
+
 .userInfo {
   display: grid;
   width: 100%;
@@ -40,4 +45,9 @@ html {
 
 .userEmail h4 {
   margin-top: 5px;
+}
+
+button {
+  height: 8vh;
+  width: 100%;
 }

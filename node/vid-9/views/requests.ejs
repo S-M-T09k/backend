@@ -8,7 +8,8 @@
   <title>Micro | <%= title %>
   </title>
   <link rel="shortcut icon" href="icon/microphone.svg" type="image/x-icon">
-  <link rel="stylesheet" href="css/request.css">
+  <link rel="stylesheet" href="css/requests.css">
+  <script src="js/requests.js" defer></script>
 </head>
 
 <body>
@@ -17,10 +18,10 @@
 
   <div class="requestsDisplay">
 
-    <% if (requests.length > 0) { %>
-      <% requests.forEach(request => { %>
-        
-        <div class="request">
+    <% if (requests.length> 0) { %>
+      <% requests.forEach(request=> { %>
+
+        <div class="request" id="<%= request._id %>">
 
           <div class="userInfo">
             <div class="userName">
@@ -31,7 +32,9 @@
             <div class="bar"></div>
             <div class="userEmail">
               <h4>
-                <%= request.email %>
+                <a href="mailto:<%= request.email %>">
+                  <%= request.email %>
+                </a>
               </h4>
             </div>
           </div>
@@ -40,25 +43,29 @@
               <p>
                 <%= request.message %>
               </p>
-            <% } else { %>
-              <p>
-                This person said nothing...
-              </p>
-            <% } %>
+              <% } else { %>
+                <p>
+                  This person said nothing...
+                </p>
+                <% } %>
           </div>
+
+          <button type="button" class="deleteBtn">Delete</button>
 
         </div>
 
-      <% }); %>
+        <% }); %>
 
-    <% } else { %>
-      <h1>
-        There are no requests in the database
-      </h1>
-      <br>
-      <a href="/"><h1>back to Home</h1></a>
-    <% } %>
-    
+          <% } else { %>
+            <h1>
+              There are no requests in the database
+            </h1>
+            <br>
+            <a href="/">
+              <h1>back to Home</h1>
+            </a>
+            <% } %>
+
   </div>
 
 </body>

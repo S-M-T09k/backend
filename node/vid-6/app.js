@@ -6,7 +6,7 @@ const mongoose = require('mongoose');
 const app = express();
 const port = 3001;
 
-const secret = require('../vid-9/mongoDB_password.js');
+const secret = require('../../secrets/mongoDB_password.js');
 // console.log(secret);
 
 //*connect to mongoDB server
@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
   res.render('index', { title: 'Home' });
 });
 
-app.post('/contact', (req, res, next) => {
+app.post('/contact', (req, res) => {
   console.log(req.body);
   let messageIncluded;
   let message;
@@ -64,8 +64,7 @@ app.post('/contact', (req, res, next) => {
   });
   console.log(request);
 
-  request.save();
-  res.redirect('/customer-requests');
+  request.save().then(() => res.redirect('/customer-requests'));
 });
 
 app.get('/about', (req, res) => {
@@ -85,7 +84,7 @@ app.get('/services', (req, res) => {
 });
 
 app.get('/customer-requests', async (req, res) => {
-  const requests = await RequestMessage.find();
+  const requests = await RequestMessage.find().sort({ createdAt: -1 });
   res.render('requests', { title: 'Customer Requests', requests });
 });
 
@@ -107,17 +106,16 @@ app.post('/new', (req, res) => {
       console.log(err);
     });
 })
-app.get('/new', (req, res) => {
-  res.render('new', { title: 'New' });
-})
-
-app.get('/all', (req, res) => {
-  Blog.find().then((result) => {
-    res.send(result);
-  }).catch((err) => {
-    console.log(err);
-  })
-})
+// app.get('/new', (req, res) => {
+//   res.render('new', { title: 'New' });
+// })
+// app.get('/all', (req, res) => {
+//   Blog.find().then((result) => {
+//     res.send(result);
+//   }).catch((err) => {
+//     console.log(err);
+//   })
+// })
 
 //!this needs to go near the bottom of the file
 app.use((req, res) => {
