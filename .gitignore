@@ -188,5 +188,6 @@ $RECYCLE.BIN/
 
 # End of https://www.toptal.com/developers/gitignore/api/node,visualstudiocode,windows
 
+mongoDB_password.js
 test/
-node/
+
