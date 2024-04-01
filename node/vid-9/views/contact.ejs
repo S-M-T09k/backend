@@ -68,10 +68,10 @@
             <!-- Javascript files-->
             <%- include('./partials/javascripts.ejs') %>
 
-         <% if (errMessage) { %>
+         <% if (locals.errMessage) { %>
 
             <script>
-               alert('<%= errMessage %>');
+               alert('<%= locals.errMessage %>');
             </script>
 
          <% } %>
