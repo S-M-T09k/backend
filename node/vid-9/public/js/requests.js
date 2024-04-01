@@ -2,18 +2,21 @@ const requests = Array.from(document.querySelectorAll('.request'));
 const deleteButtons = Array.from(document.querySelectorAll('.deleteBtn'));
 
 deleteButtons.forEach((button, index) => {
-  button.addEventListener('click', () => {
+  button.addEventListener('click', async () => {
 
     const id = button.parentElement.id;
-    fetch('/customer-requests', {
-      method: 'Delete',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        id: id
-      })
-    })
+    console.log(id);
+    try {
+      const res = await fetch(`/customer-requests/${id}`, { method: 'Delete' })
+
+      console.log(res);
+      console.log(res.body);
+      requests[index].remove();
+      window.alert(`deleted document: ${id}`);
+
+    } catch (error) {
+      console.error(error);
+    }
 
   })
 })

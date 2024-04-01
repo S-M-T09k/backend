@@ -67,6 +67,13 @@ app.post('/contact', (req, res) => {
   request.save().then(() => res.redirect('/customer-requests'));
 });
 
+app.delete('/customer-requests/:id', (req, res) => {
+  console.log(req.params.id);
+  RequestMessage.findByIdAndDelete(req.params.id).then(() => {
+    res.send('request deleted');
+  });
+});
+
 app.get('/about', (req, res) => {
   res.render('about', { title: 'About' });
 });
